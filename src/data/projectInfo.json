@@ -2,7 +2,7 @@
     {
         "name": "Star Caps",
         "stack": "Gatsby | GraphQL | GraphCMS | Bootstrap | SASS",
-        "description": "This is the website for Star Caps, a local hat store in Houston. As the team is ",
+        "description": "This is the website for Star Caps, a local hat store in Houston. The goal of this project was to grow the online presence of the store. As the team is small, the focus was to create an online product catalog rather than establishing a full e-commerce solution.",
         "links": {
             "demo": "https://wizardly-allen-f028ea.netlify.app/",
             "github": "https://github.com/rchlblns/star-caps"
