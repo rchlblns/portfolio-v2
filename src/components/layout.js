@@ -19,7 +19,7 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <div style={{ margin: `3rem auto`, maxWidth: 650, padding: `0 1rem` }}>
+      <div style={{ margin: `3rem auto`, maxWidth: 850, padding: `0 1rem` }}>
       <Header siteTitle={data.site.siteMetadata.title} />
         {children}
       <Footer />
