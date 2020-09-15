@@ -20,10 +20,19 @@
     {
         "name": "Portfolio V1",
         "stack": "React | Bootstrap | SASS | Node.js | Axios | Express.js",
-        "description": "The first iteration of my portfolio",
+        "description": "The first iteration of my portfolio!",
         "links": {
             "demo": "https://richelleb.dev",
             "github": "https://github.com/rchlblns/portfolio"
+        }
+    },
+    {
+        "name": "Pacer TMS",
+        "stack": "HTML5 | CSS3 | ES6 | Bootstrap | BCrypt | Node.js | Express.js | Handlebars.js | MySQL | Sequelize | Passport.js",
+        "description": "Pacer Transportation Management System is an application that manages complex inventory systems. It's capabilities range from tracking simple product movement to detailed inventory control. This version of the application was created from the perspective of a pipe manufacturer, however the application can be customized to fit any type of transport management need.",
+        "links": {
+            "demo": "https://hidden-savannah-49813.herokuapp.com/",
+            "github": "https://github.com/nyramirez/Project2"
         }
     },
     {
@@ -36,21 +45,21 @@
         }
     },
     {
-        "name": "Pacer TMS",
-        "stack": "HTML5 | CSS3 | ES6 | Bootstrap | BCrypt | Node.js | Express.js | Handlebars.js | MySQL | Sequelize | Passport.js",
-        "description": "Pacer Transportation Management System is an application that manages complex inventory systems. It's capabilities range from tracking simple product movement to detailed inventory control. This version of the application was created from the perspective of a pipe manufacturer, however the application can be customized to fit any type of TMS need.",
-        "links": {
-            "demo": "https://hidden-savannah-49813.herokuapp.com/",
-            "github": "https://github.com/nyramirez/Project2"
-        }
-    },
-    {
         "name": "Train Scheduler",
         "stack": "HTML5 | CSS3 | Bootstrap | ES5 | jQuery | Firebase | Moment.js",
-        "description": "Train Scheduler provides up to date arrival and departure information for various trains. Users can add trains to the list by filling out the form underneath the table. ",
+        "description": "Train Scheduler provides up to date arrival and departure information for various trains. Users can add trains to the tracking list by filling out the form underneath the table.",
         "links": {
             "demo": "https://rchlblns.github.io/Train-Scheduler/",
             "github": "https://github.com/rchlblns/Train-Scheduler"
+        }
+    },
+    {
+        "name": "Adventure TIme Clicky Game",
+        "stack": "React | HTML5 | CSS3 | ES6 | Bootstrap",
+        "description": "A memory game where the goal is to NOT click on the same picture twice.",
+        "links": {
+            "demo": "https://polar-journey-52548.herokuapp.com/",
+            "github": "https://https://github.com/rchlblns/clicky-game"
         }
     }
 ]
