@@ -2,7 +2,7 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Img from "gatsby-image"
+import ReactFreezeframe from 'react-freezeframe'
 import styled from "styled-components"
 import { GoMarkGithub, GoLinkExternal } from "react-icons/go"
 
@@ -25,14 +25,20 @@ const Work = ({ data }) => (
 
     {data.allContentfulProjects.edges.map(edge =>
       <>
-      <img src={edge.node.image.fluid.src} alt={edge.node.alt} />
-      <Card>
-        <h2>{edge.node.name}</h2>
-        <p>Built with: {edge.node.stack}</p>
-        <p>{edge.node.description.description}</p>
-        <StyledLink href={edge.node.github} target="_blank" rel="noopener noreferrer"><GoMarkGithub /></StyledLink>
-        <StyledLink href={edge.node.demo} target="_blank" rel="noopener noreferrer"><GoLinkExternal /></StyledLink> 
-      </Card>
+        <ReactFreezeframe
+          options={{
+            trigger: "hover"
+          }}
+        >
+          <img src={edge.node.image.fluid.src} alt={edge.node.alt} />
+        </ReactFreezeframe>
+        <Card>
+          <h2>{edge.node.name}</h2>
+          <p>Built with: {edge.node.stack}</p>
+          <p>{edge.node.description.description}</p>
+          <StyledLink href={edge.node.github} target="_blank" rel="noopener noreferrer"><GoMarkGithub /></StyledLink>
+          <StyledLink href={edge.node.demo} target="_blank" rel="noopener noreferrer"><GoLinkExternal /></StyledLink>
+        </Card>
       </>
     )}
     {/* <Link to="/">Go back to the homepage</Link> */}
