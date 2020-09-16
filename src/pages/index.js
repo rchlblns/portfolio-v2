@@ -7,7 +7,10 @@ import SEO from "../components/seo"
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <h1>Hi! I'm Richelle, a full stack developer in Houston, TX.</h1>
+    <div>
+      <img src="https://res.cloudinary.com/dimp0dvky/image/upload/v1600197942/portfolio-assets/three-edited_jpp8sa.png" style={{maxWidth: 350}} alt="Richelle"/>
+    </div>
+    <h1>Hi! I'm Richelle, a full stack developer based in Houston, TX.</h1>
     {/* <p>I'm interested in creating simple solutions for complex problems.</p> */}
     <p>Current stack: React, Gatsby, GraphQL, Node.js</p>
     <p>View my resume here. And check out my work here!</p>
