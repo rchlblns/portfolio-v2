@@ -7,7 +7,7 @@ import styled from "styled-components"
 import { GoMarkGithub, GoLinkExternal } from "react-icons/go"
 
 const StyledCard = styled.div`
-  background: papayawhip;
+  background: rgba(250,223,215, 0.6);
   padding: 20px;
   margin-top: 45px;
   margin-bottom: 3em;
@@ -37,6 +37,9 @@ const CardImg = styled.img`
   object-fit: cover;
   border-radius: 10px;
   box-shadow: inherit;
+  // box-shadow: 
+  //   -8px 8px 12px 0 rgba(0, 0, 0, 0.3),
+  //   12px -12px 10px rgba(255, 255, 255, 0.25);
 `
 
 const StyledLink = styled.a`
@@ -66,8 +69,8 @@ const Work = ({ data }) => (
           <h2>{edge.node.name}</h2>
           <p>Built with: {edge.node.stack}</p>
           <p>{edge.node.description.description}</p>
-          <StyledLink href={edge.node.github} target="_blank" rel="noopener noreferrer"><GoMarkGithub /></StyledLink>
-          <StyledLink href={edge.node.demo} target="_blank" rel="noopener noreferrer"><GoLinkExternal /></StyledLink>
+          <StyledLink href={edge.node.github} target="_blank" rel="noopener noreferrer"><GoMarkGithub size={32}/></StyledLink>
+          <StyledLink href={edge.node.demo} target="_blank" rel="noopener noreferrer"><GoLinkExternal size={32}/></StyledLink>
         </CardInfo>
       </StyledCard>
     )}
@@ -79,7 +82,7 @@ export default Work
 
 export const query = graphql`
   query ProjectsQuery {
-    allContentfulProjects {
+    allContentfulProjects(sort: {fields: orderNumber}) {
       edges {
         node {
           demo
