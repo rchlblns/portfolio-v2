@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
+import { graphql} from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import ReactFreezeframe from 'react-freezeframe'
@@ -50,7 +50,7 @@ const Work = ({ data }) => (
   <Layout>
     <SEO title="Work" />
     <h1>My Work</h1>
-    <p>Freelance work and personal projects</p>
+    <p>A selectiong of freelance work and projects</p>
 
     {data.allContentfulProjects.edges.map(edge =>
       <StyledCard
