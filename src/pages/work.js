@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql} from "gatsby"
+import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import ReactFreezeframe from 'react-freezeframe'
@@ -46,37 +46,47 @@ const StyledLink = styled.a`
   margin-right: 1em;
 `
 
-const Work = ({ data }) => (
-  <Layout>
-    <SEO title="Work" />
-    <h1>My Work</h1>
-    <p>A selectiong of freelance work and projects</p>
+const Work = ({ data }) => {
+  return (
+    <Layout>
+      <SEO title="Work" />
+      <h1>Work</h1>
+      <p>A selection of my freelance work and projects</p>
 
-    {data.allContentfulProjects.edges.map(edge =>
-      <StyledCard
-        key={edge.node.id}
-      >
-        <ImgWrapper>
-          <ReactFreezeframe
-            options={{
-              trigger: "hover"
-            }}
-          >
-            <CardImg src={edge.node.image.fluid.src} alt={edge.node.imageAlt} />
-          </ReactFreezeframe>
-        </ImgWrapper>
-        <CardInfo>
-          <h2>{edge.node.name}</h2>
-          <p>Built with: {edge.node.stack}</p>
-          <p>{edge.node.description.description}</p>
-          <StyledLink href={edge.node.github} target="_blank" rel="noopener noreferrer"><GoMarkGithub size={32}/></StyledLink>
-          <StyledLink href={edge.node.demo} target="_blank" rel="noopener noreferrer"><GoLinkExternal size={32}/></StyledLink>
-        </CardInfo>
-      </StyledCard>
-    )}
-    {/* <Link to="/">Go back to the homepage</Link> */}
-  </Layout>
-)
+      {data.allContentfulProjects.edges.map(edge =>
+        <StyledCard
+          key={edge.node.id}
+        >
+          <ImgWrapper>
+            <ReactFreezeframe
+              options={{
+                trigger: "hover"
+              }}
+            >
+              <CardImg src={edge.node.image.fluid.src} alt={edge.node.imageAlt} />
+            </ReactFreezeframe>
+          </ImgWrapper>
+          <CardInfo>
+            <h2>{edge.node.name}</h2>
+            <p>Built with: {edge.node.stack}</p>
+            <p>{edge.node.description.description}</p>
+            
+            {/* only displays repo link for public projects */}
+            {edge.node.publicRepo === true  ? (
+              <>
+                <StyledLink href={edge.node.github} target="_blank" rel="noopener noreferrer"><GoMarkGithub size={32} /></StyledLink>
+                <StyledLink href={edge.node.demo} target="_blank" rel="noopener noreferrer"><GoLinkExternal size={32} /></StyledLink>
+              </>
+            ) : (
+                <StyledLink href={edge.node.demo} target="_blank" rel="noopener noreferrer"><GoLinkExternal size={32} /></StyledLink>
+              )
+            }
+          </CardInfo>
+        </StyledCard>
+      )}
+    </Layout>
+  )
+}
 
 export default Work
 
@@ -103,6 +113,7 @@ export const query = graphql`
           imgAlt
           name
           stack
+          publicRepo
         }
       }
     }
