@@ -1,10 +1,16 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-
+import { createGlobalStyle } from "styled-components"
 import Header from "./header"
 import Footer from "./footer"
 
+const GlobalStyle = createGlobalStyle`
+a, a:link {
+  color: pink;
+  text-decoration: none;
+}
+`
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -19,6 +25,7 @@ const Layout = ({ children }) => {
 
   return (
     <>
+    <GlobalStyle />
       <div style={{ margin: `3rem auto`, maxWidth: 850, padding: `0 1rem` }}>
       <Header siteTitle={data.site.siteMetadata.title} />
         {children}
