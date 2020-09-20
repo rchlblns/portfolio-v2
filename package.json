@@ -31,7 +31,7 @@
     "react-typography": "^0.16.19",
     "styled-components": "^5.2.0",
     "typography": "^0.16.19",
-    "typography-theme-fairy-gates": "^0.16.19"
+    "typography-theme-sutro": "^0.16.19"
   },
   "devDependencies": {
     "prettier": "2.1.1"

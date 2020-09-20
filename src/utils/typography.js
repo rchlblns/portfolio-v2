@@ -1,7 +1,8 @@
 import Typography from "typography"
-import fairyGateTheme from "typography-theme-fairy-gates"
+import sutroTheme from "typography-theme-sutro"
 
-const typography = new Typography(fairyGateTheme)
+const typography = new Typography(sutroTheme)
 
 export const { scale, rhythm, options } = typography
+
 export default typography

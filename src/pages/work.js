@@ -28,7 +28,7 @@ const ImgWrapper = styled.div`
 `
 
 const CardInfo = styled.div`
-  margin-top: -40px;
+  margin-top: 10px;
   margin-bottom: 10px;
 `
 

@@ -16,7 +16,7 @@ const AboutMe = ({ data }) => {
   return (
     <Layout>
       <SEO title="About Me" />
-      <h1>Orgin Story</h1>
+      <h1>Origin Story</h1>
       <div>
         <PortfolioPic />
       </div>

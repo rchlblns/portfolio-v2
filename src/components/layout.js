@@ -6,9 +6,10 @@ import Header from "./header"
 import Footer from "./footer"
 
 const GlobalStyle = createGlobalStyle`
-a, a:link {
-  color: pink;
+a:visited, a:link {
+  color: #B06E5F;
   text-decoration: none;
+  text-shadow: none;
 }
 `
 
@@ -25,11 +26,11 @@ const Layout = ({ children }) => {
 
   return (
     <>
-    <GlobalStyle />
+      <GlobalStyle />
       <div style={{ margin: `3rem auto`, maxWidth: 850, padding: `0 1rem` }}>
-      <Header siteTitle={data.site.siteMetadata.title} />
+        <Header siteTitle={data.site.siteMetadata.title} />
         {children}
-      <Footer />
+        <Footer />
       </div>
     </>
   )

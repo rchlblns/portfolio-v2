@@ -10,7 +10,7 @@ text-align: center;
 const Footer = () => {
     return (
         <StyledFooter>
-            © {new Date().getFullYear()}, Powered by coffee &amp;
+            © {new Date().getFullYear()}, Built with coffee &amp;
             {` `}
             <a href="https://www.gatsbyjs.org">Gatsby</a>
         </StyledFooter>
