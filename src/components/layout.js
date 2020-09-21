@@ -6,11 +6,16 @@ import Header from "./header"
 import Footer from "./footer"
 
 const GlobalStyle = createGlobalStyle`
+body {
+  background-color: #F8F6F1;
+}
+
 a:visited, a:link {
-  color: #B06E5F;
+  color: #af4448;
   text-decoration: none;
   text-shadow: none;
 }
+
 `
 
 const Layout = ({ children }) => {

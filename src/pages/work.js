@@ -7,28 +7,22 @@ import styled from "styled-components"
 import { GoMarkGithub, GoLinkExternal } from "react-icons/go"
 
 const StyledCard = styled.div`
-  background: rgba(250,223,215, 0.6);
+  background: #FFFFFF;
   padding: 20px;
   margin-top: 45px;
   margin-bottom: 3em;
   border-radius: 15px;
-  box-shadow: 
-    -8px 8px 12px 0 rgba(0, 0, 0, 0.3),
-    12px -12px 40px rgba(255, 255, 255, 0.25);
 `
 
 const ImgWrapper = styled.div`
   margin-top: -45px;
   &.ff-container.ff-responsive .ff-image, .ff-container.ff-responsive .ff-canvas {
     border-radius: 10px;
-    box-shadow: 
-    -8px 8px 12px 0 rgba(0, 0, 0, 0.3),
-    12px -12px 10px rgba(255, 255, 255, 0.25);
   }
 `
 
 const CardInfo = styled.div`
-  margin-top: 10px;
+  margin-top: -30px;
   margin-bottom: 10px;
 `
 

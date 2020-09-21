@@ -1,12 +1,18 @@
+import React from "react"
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
-import React from "react"
+import styled from "styled-components"
+
+const Brand = styled.h3`
+  color: #191919;
+  display: inline;
+`
 
 const Header = ({ siteTitle }) => (
   <div style={{ margin: `3rem auto`}}>
     <header style={{ marginBottom: `1.5rem` }}>
       <Link to="/" style={{ textShadow: `none`, backgroundImage: `none` }}>
-        <h3 style={{ display: `inline` }}>{siteTitle}</h3>
+        <Brand>{siteTitle}</Brand>
       </Link>
       <ul style={{ listStyle: `none`, float: `right`, display: `inline-block`}}>
         <Link to="/work" style={{marginRight: `1rem`}}>Work</Link>
