@@ -18,8 +18,8 @@ const Footer = () => {
             {` `}
             <a href="https://www.gatsbyjs.org">Gatsby</a>
             <SocialLinks>
-            <a href="https://github.com/rchlblns" target="_blank" rel="noopener noreferrer" style={{ marginRight: `1rem` }}><FaGithub size={32} /></a>
-            <a href="https://linkedin.com/in/richellebillones" target="_blank" rel="noopener noreferrer" ><FaLinkedin size={32} /></a>
+            <a href="https://github.com/rchlblns" target="_blank" rel="noopener noreferrer" style={{ marginRight: `1rem` }} aria-label="Github"><FaGithub size={32} /></a>
+            <a href="https://linkedin.com/in/richellebillones" target="_blank" rel="noopener noreferrer" ><FaLinkedin size={32} aria-label="LinkedIn"/></a>
           </SocialLinks>
         </StyledFooter>
     )

@@ -1,7 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
-import styled from "styled-components"
 import SEO from "../components/seo"
 import { Row, Col } from "react-grid-system"
 import PortfolioPic from "../components/porfolio-pic"
