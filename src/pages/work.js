@@ -22,7 +22,7 @@ text-align: left;
 `
 
 const ImgWrapper = styled.div`
-width: 85%;
+width: 80%;
 margin: 0 auto;
 margin-top: 30px;
 &.ff-container.ff-responsive .ff-image, .ff-container.ff-responsive .ff-canvas {
@@ -56,7 +56,7 @@ const Work = ({ data }) => {
     <Layout>
       <SEO title="Work" />
       <h1 className="page-title">Work</h1>
-      <Lead>A selection of my freelance work and projects</Lead>
+      <Lead>A selection of my projects and freelance work</Lead>
 
       {data.allContentfulProjects.edges.map(edge =>
         <StyledCard

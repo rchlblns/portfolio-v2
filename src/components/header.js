@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import styled from "styled-components"
+import { FiSun, FiMoon } from "react-icons/fi";
 
 const Navbar = styled.div`
 padding-bottom: 1.0em;
@@ -30,6 +31,7 @@ const Header = ({ siteTitle }) => (
     <NavList>
       <NavLink to="/work" >Work</NavLink>
       <NavLink to="/about" >About</NavLink>
+      {/* <FiSun style={{display: "inline"}}/> */}
     </NavList>
   </Navbar>
 )
