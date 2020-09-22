@@ -7,50 +7,63 @@ import styled from "styled-components"
 import { GoMarkGithub, GoLinkExternal } from "react-icons/go"
 
 const StyledCard = styled.div`
-  background: #FFFFFF;
-  padding: 20px;
-  margin-top: 45px;
-  margin-bottom: 3em;
-  border-radius: 15px;
+background: #ffffff;
+padding: 20px;
+margin-top: 45px;
+margin-bottom: 3em;
+border-radius: 12px;
+box-shadow: 
+0 1px 3px rgba(0,0,0,0.12), 
+0 1px 2px rgba(0,0,0,0.24);
+`
+const CardTitle = styled.h1`
+margin-top: -50px;
+text-align: left;
 `
 
 const ImgWrapper = styled.div`
-  margin-top: -45px;
-  &.ff-container.ff-responsive .ff-image, .ff-container.ff-responsive .ff-canvas {
-    border-radius: 10px;
-  }
+width: 85%;
+margin: 0 auto;
+margin-top: 30px;
+&.ff-container.ff-responsive .ff-image, .ff-container.ff-responsive .ff-canvas {
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.30);
+}
 `
 
 const CardInfo = styled.div`
-  margin-top: -30px;
-  margin-bottom: 10px;
+margin-top: 10px;
+margin-bottom: 10px;
 `
 
 const CardImg = styled.img`
-  width: 100%;
-  object-fit: cover;
-  border-radius: 10px;
-  box-shadow: inherit;
-  // box-shadow: 
-  //   -8px 8px 12px 0 rgba(0, 0, 0, 0.3),
-  //   12px -12px 10px rgba(255, 255, 255, 0.25);
+width: 100%;
+object-fit: cover;
+border-radius: 12px;
+box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 `
 
 const StyledLink = styled.a`
   margin-right: 1em;
+`
+const Lead = styled.p`
+margin-top: -20px;
+padding-bottom: 20px;
 `
 
 const Work = ({ data }) => {
   return (
     <Layout>
       <SEO title="Work" />
-      <h1>Work</h1>
-      <p>A selection of my freelance work and projects</p>
+      <h1 className="page-title">Work</h1>
+      <Lead>A selection of my freelance work and projects</Lead>
 
       {data.allContentfulProjects.edges.map(edge =>
         <StyledCard
           key={edge.node.id}
         >
+          <CardTitle>{edge.node.name}</CardTitle>
+
           <ReactFreezeframe
             options={{
               trigger: "hover"
@@ -61,7 +74,6 @@ const Work = ({ data }) => {
             </ImgWrapper>
           </ReactFreezeframe>
           <CardInfo>
-            <h2>{edge.node.name}</h2>
             <p>Built with: {edge.node.stack}</p>
             <p>{edge.node.description.description}</p>
 

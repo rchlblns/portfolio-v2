@@ -3,13 +3,14 @@ import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 
 const StyledImg = styled.img`
-  width: 500px;
+  width: 400px;
+  border-radius: 12px;
 `
 
 const PortfolioPic = () => {
   const data = useStaticQuery(graphql`
     query PhotoQuery {
-      cloudinaryMedia(public_id: {eq: "portfolio-assets/three-edited_jpp8sa"}) {
+      cloudinaryMedia(public_id: {eq: "portfolio-assets/three-edited_sibpwy"}) {
         url
         context {
           custom {

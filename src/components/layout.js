@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-import { createGlobalStyle } from "styled-components"
+import styled, { createGlobalStyle } from "styled-components"
 import Header from "./header"
 import Footer from "./footer"
 
@@ -10,12 +10,22 @@ body {
   background-color: #F8F6F1;
 }
 
+.page-title {
+  font-size: 52px;
+  line-height: 1.0;
+}
+
 a:visited, a:link {
   color: #af4448;
   text-decoration: none;
   text-shadow: none;
 }
+`
 
+const Wrapper = styled.div`
+  margin: 2.5rem auto;
+  max-width: 1000px;
+  padding: 0 1rem;
 `
 
 const Layout = ({ children }) => {
@@ -24,7 +34,7 @@ const Layout = ({ children }) => {
       site {
         siteMetadata {
           title
-        }
+        } 
       }
     }
   `)
@@ -32,11 +42,12 @@ const Layout = ({ children }) => {
   return (
     <>
       <GlobalStyle />
-      <div style={{ margin: `3rem auto`, maxWidth: 850, padding: `0 1rem` }}>
+        <Wrapper>
         <Header siteTitle={data.site.siteMetadata.title} />
         {children}
         <Footer />
-      </div>
+        </Wrapper>
+      
     </>
   )
 }
