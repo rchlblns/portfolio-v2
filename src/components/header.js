@@ -8,47 +8,60 @@ const Navbar = styled.div`
 padding-bottom: 1.5em;
 display: flex;
 position: relative;
-justify-content: space-between;
+// align-items: center;
 
-@media (max-width: 530px) {
+@media (max-width: 445px) {
 position: sticky;
-
-
+// align-items: center;
 }
 `
 
 const NavLink = styled(Link)`
 margin-right: 1em;
 `
+// const NavWrapper = styled.div`
+// margin-left: auto;
+
+// @media (max-width: 530px) {
+//   display: none;
+// }
+// `
 
 const Brand = styled.h3`
 color: #181818;
 display: inline;
-`
-const Toggle = styled(MenuOutline)`
-display: none;
-height: 100%;
-cursor: pointer;
-height: 2em;
 
-@media (max-width: 530px) {
-  display: flex;
+@media (max-width: 445px) {
+  vertical-align: middle;
 }
 `
-const Navbox = styled.div`
-display: flex;
-justify-content: flex-end;
-align-items: center;
 
-@media (max-width: 530px) {
+const ToggleButton = styled(MenuOutline)`
+  display: none;
+  height: 100%;
+  cursor: pointer;
+  height: 2em;
+  color: #af4448;
+
+  @media (max-width: 445px) {
+    display: flex;
+    margin-left: auto;
+    vertical-align: middle;
+  }
+`
+
+const Navbox = styled.div`
+margin-left: auto;
+
+@media (max-width: 445px) {
   flex-direction: column;
   position: fixed;
   width: 100%;
   justify-content: flex-start;
-  padding-top: 10vh;
-  // background-color: #fff;
+  margin-top: 8vh;
+  padding-bottom: 10vh;
+  background-color: #fff;
   transition: all 0.3 ease-in;
-  top: 8vh;
   left: ${props => props.open ? "-100%" : "0"}
 }
 `
@@ -57,13 +70,25 @@ const Hamburger = styled.div`
 background-color: #111;
 align-self: center;
 position: relative;
+transition: all .3s linear;
 
-`
-
-// const ThemeButton = styled.div`
-// float: right
+// ::before,
+// ::after {
+//   position: absolute;
+// }
 // `
 
+const Divider = styled.div`
+width: 2px;
+margin: 6px 0;
+margin-right: 1em;
+background: #CECECE;
+
+@media (max-width: 445px) {
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+`
 
 const Header = ({ siteTitle }) => {
 
@@ -74,24 +99,33 @@ const Header = ({ siteTitle }) => {
       <NavLink to="/">
         <Brand>{siteTitle}</Brand>
       </NavLink>
-      <Toggle
+      {/* <NavWrapper>
+        <NavLink to="/work" >Work</NavLink>
+        <NavLink to="/about" >About</NavLink>
+      </NavWrapper> */}
+      <ToggleButton
         navbarOpen={navbarOpen}
         onClick={() => setNavbarOpen(!navbarOpen)}
       >
         {navbarOpen ? <Hamburger open /> : <Hamburger />}
-      </Toggle>
+      </ToggleButton>
       {navbarOpen ? (
         <Navbox>
+          
           <NavLink to="/work" >Work</NavLink>
           <NavLink to="/about" >About</NavLink>
+         
         </Navbox>
       ) : (
           <Navbox open>
+            
             <NavLink to="/work" >Work</NavLink>
             <NavLink to="/about" >About</NavLink>
+            
           </Navbox>
         )}
-      <SunOutline size={32} style={{ display: "inline-block" }} />
+        <Divider />
+      <SunOutline size={32} style={{alignSelf: "center"}}/>
     </Navbar>
   )
 }
