@@ -4,7 +4,8 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import ReactFreezeframe from 'react-freezeframe'
 import styled from "styled-components"
-import { GoMarkGithub, GoLinkExternal } from "react-icons/go"
+import { LinkExternal } from "@styled-icons/boxicons-regular/LinkExternal"
+import { Github } from "@styled-icons/boxicons-logos/Github"
 
 const StyledCard = styled.div`
 background: #ffffff;
@@ -80,11 +81,11 @@ const Work = ({ data }) => {
             {/* only displays repo link for public projects */}
             {edge.node.publicRepo === true ? (
               <>
-                <StyledLink href={edge.node.github} target="_blank" rel="noopener noreferrer"><GoMarkGithub size={32} /></StyledLink>
-                <StyledLink href={edge.node.demo} target="_blank" rel="noopener noreferrer"><GoLinkExternal size={32} /></StyledLink>
+                <StyledLink href={edge.node.github} target="_blank" rel="noopener noreferrer"><Github size={32} /></StyledLink>
+                <StyledLink href={edge.node.demo} target="_blank" rel="noopener noreferrer"><LinkExternal size={32} /></StyledLink>
               </>
             ) : (
-                <StyledLink href={edge.node.demo} target="_blank" rel="noopener noreferrer"><GoLinkExternal size={32} /></StyledLink>
+                <StyledLink href={edge.node.demo} target="_blank" rel="noopener noreferrer"><LinkExternal size={32} /></StyledLink>
               )
             }
           </CardInfo>
