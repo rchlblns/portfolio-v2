@@ -98,14 +98,14 @@ margin-right: 0.5em;
 }
 `
 
-const Header = ({ siteTitle }) => {
+const Header = () => {
 
   const [navbarOpen, setNavbarOpen] = useState(false);
 
   return (
     <Navbar>
       <NavLink to="/">
-        <Brand>{siteTitle}</Brand>
+        <Brand>{`<RichelleBillones />`}</Brand>
       </NavLink>
       
       <ToggleButton

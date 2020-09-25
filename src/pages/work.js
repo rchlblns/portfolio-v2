@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import ReactFreezeframe from 'react-freezeframe'
+import loadable from "@loadable/component"
 import styled from "styled-components"
 import { LinkExternal } from "@styled-icons/boxicons-regular/LinkExternal"
 import { Github } from "@styled-icons/boxicons-logos/Github"
@@ -52,7 +52,10 @@ margin-top: -20px;
 padding-bottom: 20px;
 `
 
+const ReactFreezeframe = loadable(() => import("react-freezeframe"))
+
 const Work = ({ data }) => {
+  
   return (
     <Layout>
       <SEO title="Work" />
@@ -65,15 +68,15 @@ const Work = ({ data }) => {
         >
           <CardTitle>{edge.node.name}</CardTitle>
 
-          <ReactFreezeframe
-            options={{
-              trigger: "hover"
-            }}
-          >
-            <ImgWrapper>
+          <ImgWrapper>
+            <ReactFreezeframe
+              options={{
+                trigger: "hover"
+              }}
+            >
               <CardImg src={edge.node.image.fluid.src} alt={edge.node.imageAlt} />
-            </ImgWrapper>
-          </ReactFreezeframe>
+            </ReactFreezeframe>
+          </ImgWrapper>
           <CardInfo>
             <p>Built with: {edge.node.stack}</p>
             <p>{edge.node.description.description}</p>
@@ -93,6 +96,8 @@ const Work = ({ data }) => {
       )}
     </Layout>
   )
+
+
 }
 
 export default Work

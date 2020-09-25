@@ -1,18 +1,18 @@
 require('dotenv').config({
-  path: `.env.${process.env.NODE_ENV}`
+  path: `.env`
 })
 
 module.exports = {
   siteMetadata: {
     title: `Richelle Billones`,
-    description: `Portfolio | Richelle Billones | Web Developer`,
+    description: `The portfolio of Richelle Billones - Web Developer`,
     author: `@rchlblns`,
   },
   plugins: [
     {
     resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: process.env.GOOGLE_ANALYTICS_TRACKING_ID,
+        trackingId: process.env.GATSBY_GOOGLE_ANALYTICS_TRACKING_ID,
         head: false,
         respectDNT: true,
       },
@@ -55,7 +55,7 @@ module.exports = {
         background_color: `#F8F6F1`,
         theme_color: `#AF4448`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`,
+        icon: `src/images/portfolio-logo.png`,
       },
     },
     {
