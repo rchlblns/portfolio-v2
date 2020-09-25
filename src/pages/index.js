@@ -15,7 +15,7 @@ const IndexPage = ({ data }) => {
     <Layout>
       <SEO title="Home" />
 
-      <h1 className="page-title">Hi <Icon src={data.cloudinaryMedia.url} alt={data.cloudinaryMedia.context.custom.alt}/> I'm Richelle - a full stack developer based in Houston, TX.</h1>
+      <h1 className="page-title">Hi <Icon src={data.cloudinaryMedia.secure_url} alt={data.cloudinaryMedia.context.custom.alt}/> I'm Richelle - a full stack developer based in Houston, TX.</h1>
 
       <p>I strive to create clean, responsive, and user-focused applications from end to end.</p>
       <p>While you're here, <Link to="/about">read more about me </Link> and <Link to="/work">check out my work.</Link></p>
@@ -29,7 +29,7 @@ export default IndexPage
 export const query = graphql`
 query IconQuery {
   cloudinaryMedia(public_id: {eq: "portfolio-assets/waving-hand_ekvzkh"}) {
-    url
+    secure_url
     context {
       custom {
         alt

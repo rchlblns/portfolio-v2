@@ -14,7 +14,7 @@ const PortfolioPic = () => {
   const data = useStaticQuery(graphql`
     query PhotoQuery {
       cloudinaryMedia(public_id: {eq: "portfolio-assets/three-edited_sibpwy"}) {
-        url
+        secure_url
         context {
           custom {
             alt
@@ -24,7 +24,7 @@ const PortfolioPic = () => {
     }
   `)
 
-  return <StyledImg src={data.cloudinaryMedia.url} alt={data.cloudinaryMedia.context.custom.alt}/>
+  return <StyledImg src={data.cloudinaryMedia.secure_url} alt={data.cloudinaryMedia.context.custom.alt}/>
 }
 
 export default PortfolioPic

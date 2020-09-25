@@ -55,7 +55,7 @@ padding-bottom: 20px;
 const ReactFreezeframe = loadable(() => import("react-freezeframe"))
 
 const Work = ({ data }) => {
-  
+
   return (
     <Layout>
       <SEO title="Work" />
@@ -68,15 +68,15 @@ const Work = ({ data }) => {
         >
           <CardTitle>{edge.node.name}</CardTitle>
 
-          <ImgWrapper>
-            <ReactFreezeframe
-              options={{
-                trigger: "hover"
-              }}
-            >
+          <ReactFreezeframe
+            options={{
+              trigger: "hover"
+            }}
+          >
+            <ImgWrapper>
               <CardImg src={edge.node.image.fluid.src} alt={edge.node.imageAlt} />
-            </ReactFreezeframe>
-          </ImgWrapper>
+            </ImgWrapper>
+          </ReactFreezeframe>
           <CardInfo>
             <p>Built with: {edge.node.stack}</p>
             <p>{edge.node.description.description}</p>
