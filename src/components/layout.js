@@ -16,9 +16,9 @@ body {
 }
 
 a:visited, a:link {
-  color: #af4448;
+  color: #AF4448;
   text-decoration: none;
-  text-shadow: none;
+  text-shadow: none; 
 }
 `
 

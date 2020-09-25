@@ -5,6 +5,9 @@ import styled from "styled-components"
 const StyledImg = styled.img`
   width: 400px;
   border-radius: 12px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 `
 
 const PortfolioPic = () => {

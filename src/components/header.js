@@ -8,7 +8,7 @@ const Navbar = styled.div`
 padding-bottom: 1.5em;
 display: flex;
 position: relative;
-// align-items: center;
+z-index: 2;
 
 @media (max-width: 445px) {
 position: sticky;
@@ -19,50 +19,64 @@ position: sticky;
 const NavLink = styled(Link)`
 margin-right: 1em;
 `
-// const NavWrapper = styled.div`
-// margin-left: auto;
 
-// @media (max-width: 530px) {
-//   display: none;
-// }
-// `
+const NavWrapper = styled.div`
+display: flex;
+flex-direction: column;
+align-items: center;
+
+@media (max-width: 530px) {
+  // display: none;
+}
+`
 
 const Brand = styled.h3`
 color: #181818;
 display: inline;
 
 @media (max-width: 445px) {
-  vertical-align: middle;
+vertical-align: middle;
 }
 `
 
 const ToggleButton = styled(MenuOutline)`
-  display: none;
-  height: 100%;
-  cursor: pointer;
-  height: 2em;
-  color: #af4448;
+display: none;
+cursor: pointer;
+height: 2em;
+color: #af4448;
 
-  @media (max-width: 445px) {
-    display: flex;
-    margin-left: auto;
-    vertical-align: middle;
-  }
+@media (max-width: 445px) {
+display: flex;
+margin-left: auto;
+vertical-align: middle;
+}
+
+@media (max-width: 321px) {
+align-self: center;
+}
 `
 
 const Navbox = styled.div`
 margin-left: auto;
+height: 100%;
+align-items: center;
+z-index: 6;
 
 @media (max-width: 445px) {
-  flex-direction: column;
-  position: fixed;
-  width: 100%;
-  justify-content: flex-start;
-  margin-top: 8vh;
-  padding-bottom: 10vh;
-  background-color: #fff;
-  transition: all 0.3 ease-in;
-  left: ${props => props.open ? "-100%" : "0"}
+flex-direction: column;
+position: fixed;
+width: 100%;
+justify-content: flex-start;
+margin-top: 8vh;
+padding-top: 6vh;
+padding-bottom: 10vh;
+background-color: #F8F6F1;
+transition: all 0.3 ease-in;
+left: ${props => props.open ? "-100%" : "0"}
+}
+
+@media (max-width: 321px) {
+margin-top: 12.5vh;
 }
 `
 
@@ -70,13 +84,7 @@ const Hamburger = styled.div`
 background-color: #111;
 align-self: center;
 position: relative;
-transition: all .3s linear;
-
-// ::before,
-// ::after {
-//   position: absolute;
-// }
-// `
+`
 
 const Divider = styled.div`
 width: 2px;
@@ -85,8 +93,8 @@ margin-right: 1em;
 background: #CECECE;
 
 @media (max-width: 445px) {
-  margin-left: 0.5em;
-  margin-right: 0.5em;
+margin-left: 0.5em;
+margin-right: 0.5em;
 }
 `
 
@@ -99,10 +107,7 @@ const Header = ({ siteTitle }) => {
       <NavLink to="/">
         <Brand>{siteTitle}</Brand>
       </NavLink>
-      {/* <NavWrapper>
-        <NavLink to="/work" >Work</NavLink>
-        <NavLink to="/about" >About</NavLink>
-      </NavWrapper> */}
+      
       <ToggleButton
         navbarOpen={navbarOpen}
         onClick={() => setNavbarOpen(!navbarOpen)}
@@ -111,21 +116,19 @@ const Header = ({ siteTitle }) => {
       </ToggleButton>
       {navbarOpen ? (
         <Navbox>
-          
-          <NavLink to="/work" >Work</NavLink>
-          <NavLink to="/about" >About</NavLink>
-         
+          <NavWrapper>
+            <NavLink to="/work" >Work</NavLink>
+            <NavLink to="/about" >About</NavLink>
+          </NavWrapper>
         </Navbox>
       ) : (
           <Navbox open>
-            
             <NavLink to="/work" >Work</NavLink>
             <NavLink to="/about" >About</NavLink>
-            
           </Navbox>
         )}
-        <Divider />
-      <SunOutline size={32} style={{alignSelf: "center"}}/>
+      {/* <Divider />
+      <SunOutline size={32} style={{ alignSelf: "center" }} /> */}
     </Navbar>
   )
 }

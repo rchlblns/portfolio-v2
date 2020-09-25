@@ -20,9 +20,9 @@ const AboutMe = ({ data }) => {
 
         <Col xs={12} md={7}>
           <div>
-            <p>I started tinkering with web technologies in high school, customizing Xanga and Myspace profiles and compiling programs written in Notepad. My professional path took me through the healthcare and data industries, but the common thread between them all is that they allowed me to pursue my passion for solving problems and helping people.</p>
+            <p>I started tinkering with web technologies in high school, customizing Xanga and Myspace profiles and compiling programs written in Notepad. Though my professional path led me through the healthcare and data industries, I found that I continuously engaged my love for technology in order to solve problems and help people.</p>
 
-            <p>As a developer, I love utilizing professional strengths in multitasking, adaptability, creative thinking, and collaboration with a strong attention to detail (and a little gumption) to elevate the digital experience. My current stack is React, modern Javascript, Node.js, Gatsby, and GraphQL. For a full list of my skills and experience, <a href={data.file.publicURL} target="_blank" rel="noopener noreferrer">view my resume.</a></p>
+            <p>As a developer, I enjoy integrating professional strengths in multitasking, adaptability, creative thinking, and collaboration with a strong attention to detail (and a little gumption) to elevate the digital experience. My current stack is React, modern Javascript, Node.js, Gatsby, and GraphQL. For a full list of my skills and experience, <a href={data.file.publicURL} target="_blank" rel="noopener noreferrer">view my resume.</a></p>
 
             <p>When I'm not coding, you can find me baking, gaming, and taking walks with my pup.</p>
           </div>

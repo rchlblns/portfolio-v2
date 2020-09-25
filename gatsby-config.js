@@ -13,7 +13,6 @@ module.exports = {
     resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: process.env.GOOGLE_ANALYTICS_TRACKING_ID,
-        // Defines where to place the tracking script - `true` in the head and `false` in the body
         head: false,
         respectDNT: true,
       },
@@ -45,13 +44,6 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    // `gatsby-transformer-json`,
-    // {
-    //   resolve: `gatsby-source-filesystem`,
-    //   options: {
-    //     path: `${__dirname}/src/data`,
-    //   }
-    // },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -60,8 +52,8 @@ module.exports = {
         name: `portfolio-v2`,
         short_name: `portfolio`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#F8F6F1`,
+        theme_color: `#AF4448`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`,
       },
@@ -72,7 +64,14 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       }
     },
-    'gatsby-plugin-dark-mode',
+    // {
+    //   resolve: `gatsby-styled-components-dark-mode`,
+    //   options: {
+    //       light: require(`${__dirname}/src/utils/light-theme.js`),
+    //       dark: require(`${__dirname}/src/utils/dark-theme.js`),
+    //   },
+    // },
+    `gatsby-plugin-dark-mode`,
     {
       resolve: `gatsby-plugin-mailgo`,
       options: {
