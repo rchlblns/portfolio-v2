@@ -6,7 +6,8 @@ module.exports = {
   siteMetadata: {
     title: `Richelle Billones`,
     description: `The portfolio of Richelle Billones - Web Developer`,
-    author: `@rchlblns`,
+    author: `Richelle`,
+    url: "richelleb.dev"
   },
   plugins: [
     {
