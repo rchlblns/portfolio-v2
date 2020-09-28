@@ -7,7 +7,8 @@ module.exports = {
     title: `Richelle Billones`,
     description: `The portfolio of Richelle Billones - Web Developer`,
     author: `Richelle`,
-    url: "richelleb.dev"
+    url: "https://richelleb.dev",
+    image: "images/thumbnail.jpg"
   },
   plugins: [
     {
@@ -55,8 +56,13 @@ module.exports = {
         start_url: `/`,
         background_color: `#F8F6F1`,
         theme_color: `#AF4448`,
+        theme_color_in_head: false,
         display: `minimal-ui`,
         icon: `src/images/portfolio-logo.png`,
+        icon_options: {
+          purpose: `any maskable`,
+        },
+        crossOrigin: `anonymous`,
       },
     },
     {
