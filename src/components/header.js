@@ -142,7 +142,7 @@ const Header = () => {
       ) : (
           <Navbox open>
             <NavLink to="/work" >Work</NavLink>
-            <NavLink to="/about" >About</NavLink>
+            <Link to="/about" >About</Link>
           </Navbox>
         )}
       <Divider />
