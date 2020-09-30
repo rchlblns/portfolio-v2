@@ -7,7 +7,20 @@ import Footer from "./footer"
 
 const GlobalStyle = createGlobalStyle`
 body {
-  background-color: #F8F6F1;
+  background-color: var(--bg);
+  color: var(--text);
+
+  &.dark-mode {
+    --bg: #292929;
+    --text: #F5F5F5;
+    --link: #DCA7A8;
+  }
+
+  &.light-mode {
+    --bg: #F8F6F1;
+    --text: #181818;
+    --link: #AF4448;
+  }
 }
 
 .page-title {
@@ -16,7 +29,7 @@ body {
 }
 
 a:visited, a:link {
-  color: #AF4448;
+  color: var(--link);
   text-decoration: none;
   text-shadow: none; 
 }

@@ -8,7 +8,7 @@ module.exports = {
     description: `The portfolio of Richelle Billones - Web Developer`,
     author: `Richelle`,
     url: "https://richelleb.dev",
-    image: "images/thumbnail.jpg"
+    image: "static/thumbnail.jpg"
   },
   plugins: [
     {
@@ -78,7 +78,16 @@ module.exports = {
     //       dark: require(`${__dirname}/src/utils/dark-theme.js`),
     //   },
     // },
-    `gatsby-plugin-dark-mode`,
+    // `gatsby-plugin-dark-mode`,
+    {
+      resolve: `gatsby-plugin-use-dark-mode`,
+      options: {
+        classNameDark: "dark-mode",
+        classNameLight: "ligh-mode",
+        storageKey: "darkMode",
+        minify: true,
+      }
+    },
     {
       resolve: `gatsby-plugin-mailgo`,
       options: {

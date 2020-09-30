@@ -2,7 +2,10 @@ import React, { useState } from "react"
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { SunOutline, MoonOutline, MenuOutline } from "@styled-icons/evaicons-outline/"
+import {MenuOutline } from "@styled-icons/evaicons-outline/MenuOutline"
+import Sun from "./sun"
+import Moon from "./moon"
+import useDarkMode from "use-dark-mode"
 
 const Navbar = styled.div`
 padding-bottom: 1.5em;
@@ -100,7 +103,11 @@ margin-right: 0.5em;
 
 const Header = () => {
 
-  const [navbarOpen, setNavbarOpen] = useState(false);
+  const [navbarOpen, setNavbarOpen] = useState(false)
+
+  const darkMode = useDarkMode(false)
+
+  const handleTheme = (theme) => {theme === "dark" ? darkMode.enable() : darkMode.disable()}
 
   return (
     <Navbar>
@@ -127,8 +134,9 @@ const Header = () => {
             <NavLink to="/about" >About</NavLink>
           </Navbox>
         )}
-      {/* <Divider />
-      <SunOutline size={32} style={{ alignSelf: "center" }} /> */}
+      <Divider />
+      <Sun onClick={handleTheme}/>
+      <Moon onClick={handleTheme}/>
     </Navbar>
   )
 }
