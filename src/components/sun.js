@@ -1,12 +1,19 @@
 import React from "react"
+import styled from "styled-components"
 import {SunOutline} from "@styled-icons/evaicons-outline/SunOutline"
+
+const SunIcon = styled(SunOutline)`
+align-self: center;
+cursor: pointer;
+width: 32px;
+` 
 
 const Sun = (props) => {
     
     const handleClick = () => props.onClick && props.onClick("light")
 
     return (
-    <SunOutline size={32} style={{ alignSelf: "center" }} onClick={handleClick} />
+    <SunIcon onClick={handleClick} />
     )
 }
 

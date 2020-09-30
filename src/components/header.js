@@ -112,17 +112,18 @@ const Header = () => {
   return (
     <Navbar>
       <NavLink to="/">
-        <Brand>{`<RichelleBillones />`}</Brand>
+        <Brand className="brand">{`<RichelleBillones />`}</Brand>
       </NavLink>
 
       <ToggleButton
         navbarOpen={navbarOpen}
         onClick={() => setNavbarOpen(!navbarOpen)}
+        className="mobile-menu-icon"
       >
         {navbarOpen ? <Hamburger open /> : <Hamburger />}
       </ToggleButton>
       {navbarOpen ? (
-        <Navbox>
+        <Navbox className="mobile-nav">
           <NavWrapper>
             <NavLink to="/work" >Work</NavLink>
             <NavLink to="/about" >About</NavLink>

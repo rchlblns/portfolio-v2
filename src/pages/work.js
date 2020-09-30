@@ -8,7 +8,7 @@ import { LinkExternal } from "@styled-icons/boxicons-regular/LinkExternal"
 import { Github } from "@styled-icons/boxicons-logos/Github"
 
 const StyledCard = styled.div`
-background: #ffffff;
+background: rgba(255,255,255,0.9);
 padding: 20px;
 margin-top: 45px;
 margin-bottom: 3em;
@@ -65,6 +65,7 @@ const Work = ({ data }) => {
       {data.allContentfulProjects.edges.map(edge =>
         <StyledCard
           key={edge.node.id}
+          className="card"
         >
           <CardTitle>{edge.node.name}</CardTitle>
 

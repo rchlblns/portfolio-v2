@@ -13,8 +13,24 @@ body {
 
   &.dark-mode {
     --bg: #292929;
-    --text: #F5F5F5;
+    --text: #F5F5F6;
     --link: #DCA7A8;
+    
+    .card {
+      background: rgba(63,63,63,0.6);
+    }
+
+    .brand {
+      color: var(--text);
+    }
+
+    .mobile-nav {
+      background-color: var(--bg);
+    }
+
+    .mobile-menu-icon {
+      color: var(--link);
+    }
   }
 
   &.light-mode {
