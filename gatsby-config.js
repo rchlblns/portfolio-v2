@@ -71,19 +71,11 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       }
     },
-    // {
-    //   resolve: `gatsby-styled-components-dark-mode`,
-    //   options: {
-    //       light: require(`${__dirname}/src/utils/light-theme.js`),
-    //       dark: require(`${__dirname}/src/utils/dark-theme.js`),
-    //   },
-    // },
-    // `gatsby-plugin-dark-mode`,
     {
       resolve: `gatsby-plugin-use-dark-mode`,
       options: {
         classNameDark: "dark-mode",
-        classNameLight: "ligh-mode",
+        classNameLight: "light-mode",
         storageKey: "darkMode",
         minify: true,
       }

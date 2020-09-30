@@ -9,6 +9,7 @@ const GlobalStyle = createGlobalStyle`
 body {
   background-color: var(--bg);
   color: var(--text);
+  transition: "color 0.2s ease-out, background 0.2s ease-out";
 
   &.dark-mode {
     --bg: #292929;

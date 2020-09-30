@@ -1,5 +1,5 @@
 import React from "react"
-import {MoonOutline} from "@styled-icons/evaicons-outline/MoonOutline"
+import { MoonOutline } from "@styled-icons/evaicons-outline/MoonOutline"
 
 const Moon = (props) => {
     

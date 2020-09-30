@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import {MenuOutline } from "@styled-icons/evaicons-outline/MenuOutline"
+import { MenuOutline } from "@styled-icons/evaicons-outline/MenuOutline"
 import Sun from "./sun"
 import Moon from "./moon"
 import useDarkMode from "use-dark-mode"
@@ -107,14 +107,14 @@ const Header = () => {
 
   const darkMode = useDarkMode(false)
 
-  const handleTheme = (theme) => {theme === "dark" ? darkMode.enable() : darkMode.disable()}
+  const handleTheme = (theme) => { theme === "dark" ? darkMode.enable() : darkMode.disable() }
 
   return (
     <Navbar>
       <NavLink to="/">
         <Brand>{`<RichelleBillones />`}</Brand>
       </NavLink>
-      
+
       <ToggleButton
         navbarOpen={navbarOpen}
         onClick={() => setNavbarOpen(!navbarOpen)}
@@ -135,8 +135,11 @@ const Header = () => {
           </Navbox>
         )}
       <Divider />
-      <Sun onClick={handleTheme}/>
-      <Moon onClick={handleTheme}/>
+      {darkMode.value === true ? (
+        <Sun onClick={handleTheme} />
+      ):(
+        <Moon onClick={handleTheme} />
+      )}
     </Navbar>
   )
 }
