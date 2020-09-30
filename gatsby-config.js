@@ -5,14 +5,14 @@ require('dotenv').config({
 module.exports = {
   siteMetadata: {
     title: `Richelle Billones`,
-    description: `The portfolio of Richelle Billones - Web Developer`,
+    description: `Full Stack Developer in Houston, TX.`,
     author: `Richelle`,
     url: "https://richelleb.dev",
     image: "static/thumbnail.jpg"
   },
   plugins: [
     {
-    resolve: `gatsby-plugin-google-analytics`,
+      resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: process.env.GATSBY_GOOGLE_ANALYTICS_TRACKING_ID,
         head: false,
@@ -20,6 +20,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-styled-components`,
+    `gatsby-plugin-use-dark-mode`,
     {
       resolve: `gatsby-source-contentful`,
       options: {
@@ -38,7 +39,7 @@ module.exports = {
         context: true,
       }
     },
-      `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -69,15 +70,6 @@ module.exports = {
       resolve: `gatsby-plugin-typography`,
       options: {
         pathToConfigModule: `src/utils/typography`,
-      }
-    },
-    {
-      resolve: `gatsby-plugin-use-dark-mode`,
-      options: {
-        classNameDark: "dark-mode",
-        classNameLight: "light-mode",
-        storageKey: "darkMode",
-        minify: true,
       }
     },
     {

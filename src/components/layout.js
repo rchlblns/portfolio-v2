@@ -9,12 +9,11 @@ const GlobalStyle = createGlobalStyle`
 body {
   background-color: var(--bg);
   color: var(--text);
-  transition: "color 0.2s ease-out, background 0.2s ease-out";
 
   &.dark-mode {
     --bg: #292929;
     --text: #F5F5F6;
-    --link: #DCA7A8;
+    --link: #E29A9E;
     
     .card {
       background: rgba(63,63,63,0.6);
