@@ -135,22 +135,22 @@ const Header = () => {
       {navbarOpen ? (
         <Navbox className="mobile-nav">
           <NavWrapper>
-            <NavLink to="/work" >Work</NavLink>
-            <NavLink to="/about" >About</NavLink>
+            <NavLink to="/work" id="work-mobile" activeClassName="active">Work</NavLink>
+            <NavLink to="/about" id="about-mobile" activeClassName="active">About</NavLink>
           </NavWrapper>
         </Navbox>
       ) : (
           <Navbox open>
-            <NavLink to="/work" >Work</NavLink>
-            <Link to="/about" >About</Link>
+            <NavLink to="/work" id="work" activeClassName="active">Work</NavLink>
+            <Link to="/about" id="about" activeClassName="active">About</Link>
           </Navbox>
         )}
       <Divider />
       {darkMode.value === true ? (
         <Sun onClick={handleTheme} />
-      ):(
-        <Moon onClick={handleTheme} />
-      )}
+      ) : (
+          <Moon onClick={handleTheme} />
+        )}
     </Navbar>
   )
 }

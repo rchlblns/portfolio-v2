@@ -14,6 +14,7 @@ body {
     --bg: #292929;
     --text: #F5F5F6;
     --link: #E29A9E;
+    --link-decoration: linear-gradient(to top, rgba(94,49,53,30) 50%, transparent 50%);
     
     .card {
       background: rgba(63,63,63,0.6);
@@ -30,12 +31,33 @@ body {
     .mobile-menu-icon {
       color: var(--link);
     }
+
+    #work-mobile, #about-mobile, #work, #about {
+      &:hover {
+        background: var(--link-decoration);
+      }
+    }
+    
+    a.active {
+      background: var(--link-decoration);
+    }
   }
 
   &.light-mode {
     --bg: #F8F6F1;
     --text: #181818;
     --link: #AF4448;
+    --link-decoration: linear-gradient(to top, rgba(249,199,201, 30) 50%, transparent 50%);
+
+    #work-mobile, #about-mobile, #work, #about {
+      &:hover {
+        background: var(--link-decoration);
+      }
+    }
+    
+    a.active {
+      background: var(--link-decoration);
+    }
   }
 }
 
