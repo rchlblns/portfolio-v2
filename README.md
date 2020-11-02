@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://richelleb.dev">
-    <img alt="Portfolio Logo" src="src/images/portfolio-logo.png" width="60" />
+    <img alt="Portfolio Logo" src="src/images/portfolio-logo.png" width="140" />
   </a>
 </p>
 
