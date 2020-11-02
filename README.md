@@ -3,9 +3,17 @@
     <img alt="Portfolio Logo" src="src/images/portfolio-logo.png" width="60" />
   </a>
 </p>
+
 <h1 align="center">
   ✨ Portfolio 2.0 ✨ 
 </h1>
+
+<p align="center">
+  <img alt="Netlify" src="https://img.shields.io/netlify/09364909-4c83-45f2-855e-e91ea668dd96">
+  <img alt="License" src="https://img.shields.io/github/license/rchlblns/portfolio-v2">
+  <img alt="Lines of code" src="https://img.shields.io/tokei/lines/github.com/rchlblns/portfolio-v2">
+  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/rchlblns/portfolio-v2">
+</p>
 
 ![Image of Home Page](https://richelleb.dev/thumbnail.jpg)
 
@@ -27,8 +35,8 @@ In the end, I found that I was left with an incredibly fast and reliable site wi
 Now that basic functionality is complete, I'm working towards taking the project to the next level by adding:
 
 - [x] Toggle for dark mode
-- [] Testing with Jest
-- [] Offline functionality
+- [ ] Testing with Jest
+- [ ] Offline functionality
 
 
 ## Author
