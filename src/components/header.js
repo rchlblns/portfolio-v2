@@ -20,6 +20,14 @@ const Navbar = styled.div`
 
 const NavLink = styled(Link)`
   margin-right: 1em;
+  font-size: 20px;
+  font-family: "Oxygen";
+  font-weight: 300;
+`
+const LastLink = styled(Link)`
+  font-size: 20px;
+  font-family: "Oxygen";
+  font-weight: 300;
 `
 
 const NavWrapper = styled.div`
@@ -35,6 +43,8 @@ const NavWrapper = styled.div`
 const Brand = styled.h3`
   color: #181818;
   display: inline;
+  font-family: "Oxygen";
+  font-weight: 700;
 
 @media (max-width: 445px) {
   vertical-align: middle;
@@ -142,7 +152,7 @@ const Header = () => {
       ) : (
           <Navbox open>
             <NavLink to="/work" id="work" activeClassName="active">Work</NavLink>
-            <Link to="/about" id="about" activeClassName="active">About</Link>
+            <LastLink to="/about" id="about" activeClassName="active">About</LastLink>
           </Navbox>
         )}
       <Divider />

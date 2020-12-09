@@ -71,6 +71,24 @@ a:visited, a:link {
   text-decoration: none;
   text-shadow: none; 
 }
+
+h1 {
+  font-family: "Oxygen";
+  font-weight: 700;
+  margin-top: 3.5rem;
+  margin-bottom: 1.78rem;
+}
+
+h2 {
+  font-family: "Oxygen";
+  font-weight: 700;
+  margin-top: 0px;
+}
+
+p {
+  font-family: "Noto Serif";
+  font-weight: 400;
+}
 `
 
 const Wrapper = styled.div`
@@ -98,7 +116,6 @@ const Layout = ({ children }) => {
         {children}
         <Footer />
         </Wrapper>
-      
     </>
   )
 }

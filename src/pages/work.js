@@ -4,55 +4,43 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import loadable from "@loadable/component"
 import styled from "styled-components"
+import { Row, Col } from "react-grid-system"
 import { LinkExternal } from "@styled-icons/boxicons-regular/LinkExternal"
 import { Github } from "@styled-icons/boxicons-logos/Github"
 
-const StyledCard = styled.div`
-background: rgba(255,255,255,0.9);
-padding: 20px;
-margin-top: 45px;
-margin-bottom: 3em;
-border-radius: 12px;
-box-shadow: 
-0 1px 3px rgba(0,0,0,0.12), 
-0 1px 2px rgba(0,0,0,0.24);
-`
-const CardTitle = styled.h1`
-margin-top: -50px;
-text-align: left;
-`
+const ReactFreezeframe = loadable(() => import("react-freezeframe"))
 
 const ImgWrapper = styled.div`
-width: 80%;
-margin: 0 auto;
-margin-top: 30px;
 &.ff-container.ff-responsive .ff-image, .ff-container.ff-responsive .ff-canvas {
-  border-radius: 12px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.30);
+  border-radius: 20px;
 }
-`
-
-const CardInfo = styled.div`
-margin-top: 10px;
-margin-bottom: 10px;
 `
 
 const CardImg = styled.img`
 width: 100%;
-object-fit: cover;
-border-radius: 12px;
-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+border-radius: 20px;
 `
 
 const StyledLink = styled.a`
-  margin-right: 1em;
+margin-right: 1em;
 `
 const Lead = styled.p`
 margin-top: -20px;
 padding-bottom: 20px;
+font-family: "Oxygen";
+font-weight: 300;
+font-size: 20px;
 `
 
-const ReactFreezeframe = loadable(() => import("react-freezeframe"))
+const StyledRow = styled(Row)`
+margin: 5.5em;
+display: flex;
+align-items: center;
+`
+
+const StyledCol = styled(Col)`
+margin: auto 0;
+`
 
 const Work = ({ data }) => {
 
@@ -60,45 +48,109 @@ const Work = ({ data }) => {
     <Layout>
       <SEO title="Work" />
       <h1 className="page-title">Work</h1>
-      <Lead>A selection of my projects and freelance work</Lead>
+      <Lead>A selection of my projects and freelance work, crafted with love</Lead>
 
       {data.allContentfulProjects.edges.map(edge =>
-        <StyledCard
-          key={edge.node.id}
-          className="card"
-        >
-          <CardTitle>{edge.node.name}</CardTitle>
+        <>
+          {edge.node.orderNumber % 2 ? (
+            <StyledRow>
+              <StyledCol xs={12} lg={6}>
+                <Row>
+                  <Col xs={9}>
+                    <h2>{edge.node.name}</h2>
+                  </Col>
+                  <Col xs={3} style={{display: "flex", justifyContent: "flex-end"}}>
+                    {/* only displays repo link for public projects */}
+                    {edge.node.publicRepo === true ? (
+                      <>
+                        <StyledLink href={edge.node.github} target="_blank" rel="noopener noreferrer"><Github size={32} /></StyledLink>
+                        <StyledLink href={edge.node.demo} target="_blank" rel="noopener noreferrer"><LinkExternal size={32} /></StyledLink>
+                      </>
+                    ) : (
+                        <StyledLink href={edge.node.demo} target="_blank" rel="noopener noreferrer"><LinkExternal size={32} /></StyledLink>
+                      )
+                    }
+                  </Col>
+                </Row>
+                <p>Built with: {edge.node.stack}</p>
+                <p>{edge.node.description.description}</p>
 
-          <ReactFreezeframe
-            options={{
-              trigger: "hover"
-            }}
-          >
-            <ImgWrapper>
-              <CardImg src={edge.node.image.fluid.src} alt={edge.node.imageAlt} />
-            </ImgWrapper>
-          </ReactFreezeframe>
-          <CardInfo>
-            <p>Built with: {edge.node.stack}</p>
-            <p>{edge.node.description.description}</p>
+                {/* only displays repo link for public projects */}
+                {/* {edge.node.publicRepo === true ? (
+                  <>
+                    <StyledLink href={edge.node.github} target="_blank" rel="noopener noreferrer"><Github size={32} /></StyledLink>
+                    <StyledLink href={edge.node.demo} target="_blank" rel="noopener noreferrer"><LinkExternal size={32} /></StyledLink>
+                  </>
+                ) : (
+                    <StyledLink href={edge.node.demo} target="_blank" rel="noopener noreferrer"><LinkExternal size={32} /></StyledLink>
+                  )
+                } */}
+              </StyledCol>
+              <Col xs={12} lg={6}>
+                <ReactFreezeframe
+                  options={{
+                    trigger: "hover",
+                    overlay: true
+                  }}
+                >
+                  <ImgWrapper>
+                    <CardImg src={edge.node.image.fluid.src} alt={edge.node.imageAlt} />
+                  </ImgWrapper>
+                </ReactFreezeframe>
+              </Col>
+            </StyledRow>
+          ) : (
+              <StyledRow>
+                <Col xs={12} lg={6}>
+                  <ReactFreezeframe
+                    options={{
+                      trigger: "hover",
+                      overlay: true
+                    }}
+                  >
+                    <ImgWrapper>
+                      <CardImg src={edge.node.image.fluid.src} alt={edge.node.imageAlt} />
+                    </ImgWrapper>
+                  </ReactFreezeframe>
+                </Col>
+                <StyledCol xs={12} lg={6} style={{justifyContent: "space-between"}}>
+                  <Row >
+                    <Col xs={9}>
+                      <h2>{edge.node.name}</h2>
+                    </Col>
+                    <Col xs={3} style={{display: "flex", justifyContent: "flex-end"}}>
+                      {/* only displays repo link for public projects */}
+                      {edge.node.publicRepo === true ? (
+                        <>
+                          <StyledLink href={edge.node.github} target="_blank" rel="noopener noreferrer"><Github size={32} /></StyledLink>
+                          <StyledLink href={edge.node.demo} target="_blank" rel="noopener noreferrer"><LinkExternal size={32} /></StyledLink>
+                        </>
+                      ) : (
+                          <StyledLink href={edge.node.demo} target="_blank" rel="noopener noreferrer"><LinkExternal size={32} /></StyledLink>
+                        )
+                      }
+                    </Col>
+                  </Row>
+                  <p>Built with: {edge.node.stack}</p>
+                  <p>{edge.node.description.description}</p>
 
-            {/* only displays repo link for public projects */}
-            {edge.node.publicRepo === true ? (
-              <>
-                <StyledLink href={edge.node.github} target="_blank" rel="noopener noreferrer"><Github size={32} /></StyledLink>
-                <StyledLink href={edge.node.demo} target="_blank" rel="noopener noreferrer"><LinkExternal size={32} /></StyledLink>
-              </>
-            ) : (
-                <StyledLink href={edge.node.demo} target="_blank" rel="noopener noreferrer"><LinkExternal size={32} /></StyledLink>
-              )
-            }
-          </CardInfo>
-        </StyledCard>
+                  {/* only displays repo link for public projects */}
+                  {/* {edge.node.publicRepo === true ? (
+                    <>
+                      <StyledLink href={edge.node.github} target="_blank" rel="noopener noreferrer"><Github size={32} /></StyledLink>
+                      <StyledLink href={edge.node.demo} target="_blank" rel="noopener noreferrer"><LinkExternal size={32} /></StyledLink>
+                    </>
+                  ) : (
+                      <StyledLink href={edge.node.demo} target="_blank" rel="noopener noreferrer"><LinkExternal size={32} /></StyledLink>
+                    )
+                  } */}
+                </StyledCol>
+              </StyledRow>
+            )}
+        </>
       )}
     </Layout>
   )
-
-
 }
 
 export default Work
@@ -127,6 +179,7 @@ export const query = graphql`
           name
           stack
           publicRepo
+          orderNumber
         }
       }
     }

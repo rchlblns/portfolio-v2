@@ -5,6 +5,9 @@ import { LinkedinSquare, Github } from "@styled-icons/boxicons-logos/"
 const StyledFooter = styled.footer`
 padding-top: 3em;
 text-align: center;
+font-size: 18px;
+font-family: "Oxygen";
+font-weight: 300;
 `
 const SocialLinks = styled.div`
 text-align: center;
@@ -14,7 +17,7 @@ padding-top: 1em;
 const Footer = () => {
     return (
         <StyledFooter>
-            © {new Date().getFullYear()}, Built with coffee &amp;
+            © {new Date().getFullYear()} Richelle Billones, Built with coffee &amp;
             {` `}
             <a href="https://www.gatsbyjs.org">Gatsby</a>
             <SocialLinks>

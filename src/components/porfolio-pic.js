@@ -4,7 +4,7 @@ import styled from "styled-components"
 
 const StyledImg = styled.img`
   width: 400px;
-  border-radius: 12px;
+  border-radius: 20px;
   display: block;
   margin-left: auto;
   margin-right: auto;
