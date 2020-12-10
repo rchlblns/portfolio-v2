@@ -78,16 +78,6 @@ const Work = ({ data }) => {
                   <p>Built with: {edge.node.stack}</p>
                   <p>{edge.node.description.description}</p>
 
-                  {/* only displays repo link for public projects */}
-                  {/* {edge.node.publicRepo === true ? (
-                  <>
-                    <StyledLink href={edge.node.github} target="_blank" rel="noopener noreferrer"><Github size={32} /></StyledLink>
-                    <StyledLink href={edge.node.demo} target="_blank" rel="noopener noreferrer"><LinkExternal size={32} /></StyledLink>
-                  </>
-                ) : (
-                    <StyledLink href={edge.node.demo} target="_blank" rel="noopener noreferrer"><LinkExternal size={32} /></StyledLink>
-                  )
-                } */}
                 </StyledCol>
                 <Col xs={12} lg={6}>
                   <ReactFreezeframe
@@ -137,16 +127,6 @@ const Work = ({ data }) => {
                     <p>Built with: {edge.node.stack}</p>
                     <p>{edge.node.description.description}</p>
 
-                    {/* only displays repo link for public projects */}
-                    {/* {edge.node.publicRepo === true ? (
-                    <>
-                      <StyledLink href={edge.node.github} target="_blank" rel="noopener noreferrer"><Github size={32} /></StyledLink>
-                      <StyledLink href={edge.node.demo} target="_blank" rel="noopener noreferrer"><LinkExternal size={32} /></StyledLink>
-                    </>
-                  ) : (
-                      <StyledLink href={edge.node.demo} target="_blank" rel="noopener noreferrer"><LinkExternal size={32} /></StyledLink>
-                    )
-                  } */}
                   </StyledCol>
                 </StyledRow>
               )}

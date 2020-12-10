@@ -20,7 +20,6 @@
     "gatsby-plugin-react-helmet": "^3.3.10",
     "gatsby-plugin-sharp": "^2.6.32",
     "gatsby-plugin-styled-components": "^3.3.10",
-    "gatsby-plugin-typography": "^2.5.10",
     "gatsby-plugin-use-dark-mode": "^1.1.2",
     "gatsby-source-cloudinary": "^0.1.14",
     "gatsby-source-contentful": "^2.3.46",
@@ -33,11 +32,8 @@
     "react-freezeframe": "^4.1.3",
     "react-grid-system": "^7.1.1",
     "react-helmet": "^6.1.0",
-    "react-typography": "^0.16.19",
     "styled-components": "^5.2.0",
     "styled-icons": "^10.21.0",
-    "typography": "^0.16.19",
-    "typography-theme-sutro": "^0.16.19",
     "use-dark-mode": "^2.3.1"
   },
   "devDependencies": {
