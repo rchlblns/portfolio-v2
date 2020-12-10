@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 
 const StyledImg = styled.img`
-  width: 400px;
+  width: 100%;
   border-radius: 20px;
   display: block;
   margin-left: auto;

@@ -3,6 +3,7 @@ import { Link, graphql } from "gatsby"
 import styled, { keyframes } from "styled-components"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import PageTransition from "gatsby-plugin-page-transitions"
 
 const rotate = keyframes`
   0% { transform: rotate( 0.0deg) }
@@ -38,19 +39,19 @@ font-size: 1.2rem;
 line-height: 1.78
 `
 
-
-
 const IndexPage = ({ data }) => {
   return (
-    <Layout>
-      <SEO title="Home" />
+    <PageTransition>
+      <Layout>
+        <SEO title="Home" />
 
-      <h1 className="page-title">Hi! <Rotate><Icon src={data.cloudinaryMedia.secure_url} alt={data.cloudinaryMedia.context.custom.alt} /></Rotate> I'm Richelle - a full stack developer based in Houston, TX.</h1>
+        <h1 className="page-title">Hi! <Rotate><Icon src={data.cloudinaryMedia.secure_url} alt={data.cloudinaryMedia.context.custom.alt} /></Rotate> I'm Richelle - a full stack developer based in Houston, TX.</h1>
 
-      <Pitch>I strive to create clean, responsive, and user-focused applications from end to end.</Pitch>
-      <Pitch>While you're here, <Link to="/about">read more about my journey</Link> and <Link to="/work">check out my work.</Link></Pitch>
-      <Pitch>Or, drop me a line at <a href="#mailgo" data-address="hello" data-domain="richelleb.dev">hello@richelleb.dev.</a></Pitch>
-    </Layout>
+        <Pitch>I strive to create clean, responsive, and user-focused applications from end to end.</Pitch>
+        <Pitch>While you're here, <Link to="/about">read more about my journey</Link> and <Link to="/work">check out my work.</Link></Pitch>
+        <Pitch>Or, drop me a line at <a href="#mailgo" data-address="hello" data-domain="richelleb.dev">hello@richelleb.dev.</a></Pitch>
+      </Layout>
+    </PageTransition>
   )
 }
 

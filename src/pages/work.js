@@ -7,6 +7,7 @@ import styled from "styled-components"
 import { Row, Col } from "react-grid-system"
 import { LinkExternal } from "@styled-icons/boxicons-regular/LinkExternal"
 import { Github } from "@styled-icons/boxicons-logos/Github"
+import PageTransition from "gatsby-plugin-page-transitions"
 
 const ReactFreezeframe = loadable(() => import("react-freezeframe"))
 
@@ -45,80 +46,23 @@ margin: auto 0;
 const Work = ({ data }) => {
 
   return (
-    <Layout>
-      <SEO title="Work" />
-      <h1 className="page-title">Work</h1>
-      <Lead>A selection of my projects and freelance work, crafted with love</Lead>
+    <PageTransition>
 
-      {data.allContentfulProjects.edges.map(edge =>
-        <>
-          {edge.node.orderNumber % 2 ? (
-            <StyledRow>
-              <StyledCol xs={12} lg={6}>
-                <Row>
-                  <Col xs={9}>
-                    <h2>{edge.node.name}</h2>
-                  </Col>
-                  <Col xs={3} style={{display: "flex", justifyContent: "flex-end"}}>
-                    {/* only displays repo link for public projects */}
-                    {edge.node.publicRepo === true ? (
-                      <>
-                        <StyledLink href={edge.node.github} target="_blank" rel="noopener noreferrer"><Github size={32} /></StyledLink>
-                        <StyledLink href={edge.node.demo} target="_blank" rel="noopener noreferrer"><LinkExternal size={32} /></StyledLink>
-                      </>
-                    ) : (
-                        <StyledLink href={edge.node.demo} target="_blank" rel="noopener noreferrer"><LinkExternal size={32} /></StyledLink>
-                      )
-                    }
-                  </Col>
-                </Row>
-                <p>Built with: {edge.node.stack}</p>
-                <p>{edge.node.description.description}</p>
+      <Layout>
+        <SEO title="Work" />
+        <h1 className="page-title">Work</h1>
+        <Lead>A selection of my projects and freelance work, crafted with love</Lead>
 
-                {/* only displays repo link for public projects */}
-                {/* {edge.node.publicRepo === true ? (
-                  <>
-                    <StyledLink href={edge.node.github} target="_blank" rel="noopener noreferrer"><Github size={32} /></StyledLink>
-                    <StyledLink href={edge.node.demo} target="_blank" rel="noopener noreferrer"><LinkExternal size={32} /></StyledLink>
-                  </>
-                ) : (
-                    <StyledLink href={edge.node.demo} target="_blank" rel="noopener noreferrer"><LinkExternal size={32} /></StyledLink>
-                  )
-                } */}
-              </StyledCol>
-              <Col xs={12} lg={6}>
-                <ReactFreezeframe
-                  options={{
-                    trigger: "hover",
-                    overlay: true
-                  }}
-                >
-                  <ImgWrapper>
-                    <CardImg src={edge.node.image.fluid.src} alt={edge.node.imageAlt} />
-                  </ImgWrapper>
-                </ReactFreezeframe>
-              </Col>
-            </StyledRow>
-          ) : (
+        {data.allContentfulProjects.edges.map(edge =>
+          <>
+            {edge.node.orderNumber % 2 ? (
               <StyledRow>
-                <Col xs={12} lg={6}>
-                  <ReactFreezeframe
-                    options={{
-                      trigger: "hover",
-                      overlay: true
-                    }}
-                  >
-                    <ImgWrapper>
-                      <CardImg src={edge.node.image.fluid.src} alt={edge.node.imageAlt} />
-                    </ImgWrapper>
-                  </ReactFreezeframe>
-                </Col>
-                <StyledCol xs={12} lg={6} style={{justifyContent: "space-between"}}>
-                  <Row >
+                <StyledCol xs={12} lg={6}>
+                  <Row>
                     <Col xs={9}>
                       <h2>{edge.node.name}</h2>
                     </Col>
-                    <Col xs={3} style={{display: "flex", justifyContent: "flex-end"}}>
+                    <Col xs={3} style={{ display: "flex", justifyContent: "flex-end" }}>
                       {/* only displays repo link for public projects */}
                       {edge.node.publicRepo === true ? (
                         <>
@@ -136,6 +80,65 @@ const Work = ({ data }) => {
 
                   {/* only displays repo link for public projects */}
                   {/* {edge.node.publicRepo === true ? (
+                  <>
+                    <StyledLink href={edge.node.github} target="_blank" rel="noopener noreferrer"><Github size={32} /></StyledLink>
+                    <StyledLink href={edge.node.demo} target="_blank" rel="noopener noreferrer"><LinkExternal size={32} /></StyledLink>
+                  </>
+                ) : (
+                    <StyledLink href={edge.node.demo} target="_blank" rel="noopener noreferrer"><LinkExternal size={32} /></StyledLink>
+                  )
+                } */}
+                </StyledCol>
+                <Col xs={12} lg={6}>
+                  <ReactFreezeframe
+                    options={{
+                      trigger: "hover",
+                      overlay: true
+                    }}
+                  >
+                    <ImgWrapper>
+                      <CardImg src={edge.node.image.fluid.src} alt={edge.node.imageAlt} />
+                    </ImgWrapper>
+                  </ReactFreezeframe>
+                </Col>
+              </StyledRow>
+            ) : (
+                <StyledRow>
+                  <Col xs={12} lg={6}>
+                    <ReactFreezeframe
+                      options={{
+                        trigger: "hover",
+                        overlay: true
+                      }}
+                    >
+                      <ImgWrapper>
+                        <CardImg src={edge.node.image.fluid.src} alt={edge.node.imageAlt} />
+                      </ImgWrapper>
+                    </ReactFreezeframe>
+                  </Col>
+                  <StyledCol xs={12} lg={6} style={{ justifyContent: "space-between" }}>
+                    <Row >
+                      <Col xs={9}>
+                        <h2>{edge.node.name}</h2>
+                      </Col>
+                      <Col xs={3} style={{ display: "flex", justifyContent: "flex-end" }}>
+                        {/* only displays repo link for public projects */}
+                        {edge.node.publicRepo === true ? (
+                          <>
+                            <StyledLink href={edge.node.github} target="_blank" rel="noopener noreferrer"><Github size={32} /></StyledLink>
+                            <StyledLink href={edge.node.demo} target="_blank" rel="noopener noreferrer"><LinkExternal size={32} /></StyledLink>
+                          </>
+                        ) : (
+                            <StyledLink href={edge.node.demo} target="_blank" rel="noopener noreferrer"><LinkExternal size={32} /></StyledLink>
+                          )
+                        }
+                      </Col>
+                    </Row>
+                    <p>Built with: {edge.node.stack}</p>
+                    <p>{edge.node.description.description}</p>
+
+                    {/* only displays repo link for public projects */}
+                    {/* {edge.node.publicRepo === true ? (
                     <>
                       <StyledLink href={edge.node.github} target="_blank" rel="noopener noreferrer"><Github size={32} /></StyledLink>
                       <StyledLink href={edge.node.demo} target="_blank" rel="noopener noreferrer"><LinkExternal size={32} /></StyledLink>
@@ -144,12 +147,13 @@ const Work = ({ data }) => {
                       <StyledLink href={edge.node.demo} target="_blank" rel="noopener noreferrer"><LinkExternal size={32} /></StyledLink>
                     )
                   } */}
-                </StyledCol>
-              </StyledRow>
-            )}
-        </>
-      )}
-    </Layout>
+                  </StyledCol>
+                </StyledRow>
+              )}
+          </>
+        )}
+      </Layout>
+    </PageTransition>
   )
 }
 
