@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -8,6 +8,7 @@ import { Row, Col } from "react-grid-system"
 import { LinkExternal } from "@styled-icons/boxicons-regular/LinkExternal"
 import { Github } from "@styled-icons/boxicons-logos/Github"
 import PageTransition from "gatsby-plugin-page-transitions"
+import GifPlayer from "react-gif-player"
 
 const ReactFreezeframe = loadable(() => import("react-freezeframe"))
 
@@ -82,13 +83,19 @@ const Work = ({ data }) => {
                 <Col xs={12} lg={6}>
                   <ReactFreezeframe
                     options={{
-                      trigger: "hover",
+                      trigger: "click",
+                      responsive: true,
                       overlay: true
                     }}
+                    onToggle={(items, isPlaying) => this.onToggle(items, isPlaying)}
                   >
                     <ImgWrapper>
-                      <CardImg src={edge.node.image.fluid.src} alt={edge.node.imageAlt} />
+                      <CardImg src={edge.node.gif.fluid.src} alt={edge.node.imageAlt} />
                     </ImgWrapper>
+                    {/* <GifPlayer 
+                    gif={edge.node.image.fluid.src} 
+                    
+                    /> */}
                   </ReactFreezeframe>
                 </Col>
               </StyledRow>
@@ -97,12 +104,14 @@ const Work = ({ data }) => {
                   <Col xs={12} lg={6}>
                     <ReactFreezeframe
                       options={{
-                        trigger: "hover",
+                        trigger: "click",
+                        responsive: true,
                         overlay: true
                       }}
+                      onToggle={(items, isPlaying) => this.onToggle(items, isPlaying)}
                     >
                       <ImgWrapper>
-                        <CardImg src={edge.node.image.fluid.src} alt={edge.node.imageAlt} />
+                        <CardImg src={edge.node.gif.fluid.src} alt={edge.node.imageAlt} />
                       </ImgWrapper>
                     </ReactFreezeframe>
                   </Col>
@@ -150,7 +159,7 @@ export const query = graphql`
           }
           github
           id
-          image {
+          gif {
             fluid {
               base64
               tracedSVG
