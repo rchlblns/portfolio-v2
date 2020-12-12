@@ -1,26 +1,22 @@
-import React, { useState } from "react"
+import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import loadable from "@loadable/component"
 import styled from "styled-components"
 import { Row, Col } from "react-grid-system"
 import { LinkExternal } from "@styled-icons/boxicons-regular/LinkExternal"
 import { Github } from "@styled-icons/boxicons-logos/Github"
 import PageTransition from "gatsby-plugin-page-transitions"
-import GifPlayer from "react-gif-player"
+// import GifPlayer from "react-gif-player"
+import loadable from "@loadable/component"
 
-const ReactFreezeframe = loadable(() => import("react-freezeframe"))
+const GifPlayer = loadable(() => import("react-gif-player"))
 
-const ImgWrapper = styled.div`
-&.ff-container.ff-responsive .ff-image, .ff-container.ff-responsive .ff-canvas {
+const GifWrapper = styled.div`
+img {
   border-radius: 20px;
+  width: 100%;
 }
-`
-
-const CardImg = styled.img`
-width: 100%;
-border-radius: 20px;
 `
 
 const StyledLink = styled.a`
@@ -48,7 +44,6 @@ const Work = ({ data }) => {
 
   return (
     <PageTransition>
-
       <Layout>
         <SEO title="Work" />
         <h1 className="page-title">Work</h1>
@@ -76,44 +71,35 @@ const Work = ({ data }) => {
                       }
                     </Col>
                   </Row>
-                  <p>Built with: {edge.node.stack}</p>
-                  <p>{edge.node.description.description}</p>
-
+                  <Row>
+                    <Col>
+                      <p>Built with: {edge.node.stack}</p>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col>
+                      <p>{edge.node.description.description}</p>
+                    </Col>
+                  </Row>
                 </StyledCol>
                 <Col xs={12} lg={6}>
-                  <ReactFreezeframe
-                    options={{
-                      trigger: "click",
-                      responsive: true,
-                      overlay: true
-                    }}
-                    onToggle={(items, isPlaying) => this.onToggle(items, isPlaying)}
-                  >
-                    <ImgWrapper>
-                      <CardImg src={edge.node.gif.fluid.src} alt={edge.node.imageAlt} />
-                    </ImgWrapper>
-                    {/* <GifPlayer 
-                    gif={edge.node.image.fluid.src} 
-                    
-                    /> */}
-                  </ReactFreezeframe>
+                  <GifWrapper>
+                    <GifPlayer
+                      gif={edge.node.gif.fluid.src}
+                      still={edge.node.thumbnail.fluid.src}
+                    />
+                  </GifWrapper>
                 </Col>
               </StyledRow>
             ) : (
                 <StyledRow>
                   <Col xs={12} lg={6}>
-                    <ReactFreezeframe
-                      options={{
-                        trigger: "click",
-                        responsive: true,
-                        overlay: true
-                      }}
-                      onToggle={(items, isPlaying) => this.onToggle(items, isPlaying)}
-                    >
-                      <ImgWrapper>
-                        <CardImg src={edge.node.gif.fluid.src} alt={edge.node.imageAlt} />
-                      </ImgWrapper>
-                    </ReactFreezeframe>
+                    <GifWrapper>
+                      <GifPlayer
+                        gif={edge.node.gif.fluid.src}
+                        still={edge.node.thumbnail.fluid.src}
+                      />
+                    </GifWrapper>
                   </Col>
                   <StyledCol xs={12} lg={6} style={{ justifyContent: "space-between" }}>
                     <Row >
@@ -133,8 +119,16 @@ const Work = ({ data }) => {
                         }
                       </Col>
                     </Row>
+                    <Row>
+                      <Col>
                     <p>Built with: {edge.node.stack}</p>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col>
                     <p>{edge.node.description.description}</p>
+                      </Col>
+                    </Row>
 
                   </StyledCol>
                 </StyledRow>
@@ -160,6 +154,15 @@ export const query = graphql`
           github
           id
           gif {
+            fluid {
+              base64
+              tracedSVG
+              srcWebp
+              srcSetWebp
+              src
+            }
+          }
+          thumbnail {
             fluid {
               base64
               tracedSVG
