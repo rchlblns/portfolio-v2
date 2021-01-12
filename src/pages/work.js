@@ -7,7 +7,6 @@ import { Row, Col } from "react-grid-system"
 import { LinkExternal } from "@styled-icons/boxicons-regular/LinkExternal"
 import { Github } from "@styled-icons/boxicons-logos/Github"
 import PageTransition from "gatsby-plugin-page-transitions"
-// import GifPlayer from "react-gif-player"
 import loadable from "@loadable/component"
 
 const GifPlayer = loadable(() => import("react-gif-player"))
