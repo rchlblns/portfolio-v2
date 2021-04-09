@@ -8,7 +8,7 @@ module.exports = {
     description: `Full Stack Developer in Houston, TX.`,
     author: `Richelle`,
     url: "https://richelleb.dev",
-    image: "static/thumbnail.jpg"
+    image: "images/thumbnail.jpg"
   },
   plugins: [
     {
