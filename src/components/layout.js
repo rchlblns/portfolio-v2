@@ -92,7 +92,8 @@ p {
 `
 
 const Wrapper = styled.div`
-  margin: 2.5rem auto;
+  min-height: calc(100vh - 126px);
+  margin: 2.5rem auto 0px;
   max-width: 1000px;
   padding: 0 1rem;
 `
@@ -111,11 +112,13 @@ const Layout = ({ children }) => {
   return (
     <>
       <GlobalStyle />
-        <Wrapper>
+      <Wrapper>
+        {/* <PageContent> */}
         <Header siteTitle={data.site.siteMetadata.title} />
         {children}
-        <Footer />
-        </Wrapper>
+        {/* </PageContent> */}
+      </Wrapper>
+      <Footer />
     </>
   )
 }

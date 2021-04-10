@@ -3,7 +3,9 @@ import styled from "styled-components"
 import { LinkedinSquare, Github } from "@styled-icons/boxicons-logos/"
 
 const StyledFooter = styled.footer`
-padding-top: 3em;
+position: relative;
+left: 0;
+bottom: 0;
 text-align: center;
 font-size: 18px;
 font-family: "Oxygen";
