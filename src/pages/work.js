@@ -33,6 +33,7 @@ const StyledRow = styled(Row)`
 margin: 5.5em;
 display: flex;
 align-items: center;
+justify-content: center;
 `
 
 const StyledCol = styled(Col)`
@@ -49,10 +50,10 @@ const Work = ({ data }) => {
         <Lead>A selection of my projects and freelance work, crafted with love</Lead>
 
         {data.allContentfulProjects.edges.map(edge =>
-          <>
+          <React.Fragment key={edge.node.id}>
             {edge.node.orderNumber % 2 ? (
               <StyledRow>
-                <StyledCol xs={12} lg={6}>
+                <StyledCol xs={12} lg={6} key={edge.node.id}>
                   <Row>
                     <Col xs={9}>
                       <h2>{edge.node.name}</h2>
@@ -81,11 +82,12 @@ const Work = ({ data }) => {
                     </Col>
                   </Row>
                 </StyledCol>
-                <Col xs={12} lg={6}>
+                <Col xs={12} lg={6} >
                   <GifWrapper>
                     <GifPlayer
                       gif={edge.node.gif.fluid.src}
                       still={edge.node.thumbnail.fluid.src}
+                      key={edge.node.gif.id}
                     />
                   </GifWrapper>
                 </Col>
@@ -97,10 +99,11 @@ const Work = ({ data }) => {
                       <GifPlayer
                         gif={edge.node.gif.fluid.src}
                         still={edge.node.thumbnail.fluid.src}
+                        key={edge.node.gif.id}
                       />
                     </GifWrapper>
                   </Col>
-                  <StyledCol xs={12} lg={6} style={{ justifyContent: "space-between" }}>
+                  <StyledCol xs={12} lg={6} style={{ justifyContent: "space-between" }} key={edge.node.id}>
                     <Row >
                       <Col xs={9}>
                         <h2>{edge.node.name}</h2>
@@ -132,7 +135,7 @@ const Work = ({ data }) => {
                   </StyledCol>
                 </StyledRow>
               )}
-          </>
+          </React.Fragment>
         )}
       </Layout>
     </PageTransition>
