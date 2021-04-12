@@ -10,6 +10,18 @@ text-align: center;
 font-size: 18px;
 font-family: "Oxygen";
 font-weight: 300;
+
+@media (max-width: 425px) {
+    padding-top: 3em;
+}
+
+@media (max-width: 680px) {
+    padding-top: 3em;
+}
+
+@media (min-width: 700px) and (max-width: 860px) {
+    padding-top: 3em;
+}
 `
 const SocialLinks = styled.div`
 text-align: center;
