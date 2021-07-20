@@ -158,7 +158,6 @@ export const query = graphql`
           gif {
             fluid {
               base64
-              tracedSVG
               srcWebp
               srcSetWebp
               src
@@ -167,7 +166,6 @@ export const query = graphql`
           thumbnail {
             fluid {
               base64
-              tracedSVG
               srcWebp
               srcSetWebp
               src
