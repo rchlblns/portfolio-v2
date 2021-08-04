@@ -15,7 +15,7 @@
   <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/rchlblns/portfolio-v2">
 </p>
 
-![Image of Home Page](https://richelleb.dev/thumbnail.jpg)
+![Image of Home Page](https://richelleb.dev/images/thumbnail.jpg)
 
 ## Allow Me to Reintroduce Myself
 This project is the second iteration of my online portfolio. This time around, I wanted to venture into the New Modern Web by utilizing JAMstack architecture, the GatsbyJS ecosystem as well as CSS in JS with Styled Components. 
